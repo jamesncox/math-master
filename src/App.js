@@ -1,6 +1,6 @@
 import React from "react";
 import MathContainer from './MathContainer'
-import "./stylesheets/styles.css";
+import "./App.css"
 
 export default function App() {
   return (
