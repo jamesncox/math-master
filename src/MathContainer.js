@@ -62,9 +62,7 @@ class MathContainer extends Component {
                 <div className="math-box">
                     <SecondNumber />
                 </div>
-                <h2>
-                    =
-        </h2>
+                <h2>=</h2>
                 <form onSubmit={this.handleSubmit.bind(this)}>
                     <input
                         className="answer-box"
