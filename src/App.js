@@ -1,6 +1,7 @@
 import React from "react";
 import MathContainer from './MathContainer'
 import "./App.css"
+import "./Responsive.css"
 
 export default function App() {
   return (
