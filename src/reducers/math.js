@@ -14,21 +14,24 @@ export default (state = {
     secondNumber: null,
     operator: null,
     answer: null,
-    userAnswer: ""
+    userAnswer: "",
+    prevFirstNumber: null,
+    prevSecondNumber: null,
+    prevOperator: null
 }, action) => {
     switch (action.type) {
         case FIRST_NUMBER:
             const genFirstNumber = Math.floor(Math.random() * 100 + 1)
-            return { ...state, firstNumber: genFirstNumber }
+            return { ...state, firstNumber: genFirstNumber, prevFirstNumber: genFirstNumber }
 
         case SECOND_NUMBER:
             const genSecondNumber = Math.floor(Math.random() * 10)
-            return { ...state, secondNumber: genSecondNumber }
+            return { ...state, secondNumber: genSecondNumber, prevSecondNumber: genSecondNumber }
 
         case OPERATOR:
             const operations = ["+", "-"]
             const genOperator = operations[Math.floor(Math.random() * operations.length)]
-            return { ...state, operator: genOperator }
+            return { ...state, operator: genOperator, prevOperator: genOperator }
 
         case SUM_ANSWER:
             const sumAnswer = state.firstNumber + state.secondNumber

@@ -5,11 +5,12 @@ import { INCREASE_SCORE, REDUCE_SCORE, CLEAR_PROBLEM } from './actionTypes'
 class Solution extends Component {
 
     revealSolution = () => {
+        console.log(this.props)
         if (this.props.userAnswer !== "") {
             if (this.props.answer === parseInt(this.props.userAnswer)) {
                 this.props.increaseScore()
                 this.props.clearProblem()
-                return <h4>{this.props.userAnswer} is correct! </h4>
+                return <h4>Yes! {this.props.prevFirstNumber} {this.props.prevOperator} {this.props.prevSecondNumber} = {this.props.userAnswer}</h4>
             } else {
                 this.props.reduceScore()
                 // this.props.clearProblem()
@@ -30,7 +31,10 @@ class Solution extends Component {
 const mapStateToProps = (state) => ({
     operator: state.math.operator,
     answer: state.math.answer,
-    userAnswer: state.math.userAnswer
+    userAnswer: state.math.userAnswer,
+    prevFirstNumber: state.math.prevFirstNumber,
+    prevOperator: state.math.prevOperator,
+    prevSecondNumber: state.math.prevSecondNumber
 })
 
 const mapDispatchToProps = (dispatch) => ({
