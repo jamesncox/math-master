@@ -12,8 +12,8 @@ class Solution extends Component {
                 return <h4>{this.props.userAnswer} is correct! </h4>
             } else {
                 this.props.reduceScore()
-                this.props.clearProblem()
-                return <h4 style={{ backgroundColor: "rgba(255, 0, 0, 0.8)" }}>Sorry, the answer is {this.props.answer} </h4>
+                // this.props.clearProblem()
+                return <h4 style={{ backgroundColor: "rgba(255, 0, 0, 0.8)" }}>Sorry, try again! </h4>
             }
         }
     }
