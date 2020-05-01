@@ -13,6 +13,10 @@
   border-top-right-radius: .5in;
 }
 
+body{
+  background-color: black;
+}
+
 button {
   font-size: 20px;
   margin: auto;
