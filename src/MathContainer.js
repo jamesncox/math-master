@@ -12,7 +12,8 @@ import {
     SUM_ANSWER,
     USER_ANSWER,
     SUBTRACT_ANSWER,
-    CLEAR_USER_ANSWER
+    CLEAR_USER_ANSWER,
+    SUCCESS_PHRASE
 } from './actionTypes'
 
 class MathContainer extends Component {
@@ -31,6 +32,7 @@ class MathContainer extends Component {
         this.props.firstNumber()
         this.props.secondNumber()
         this.props.operator()
+        this.props.successPhrase()
         this.props.clearUserAnswer()
     };
 
@@ -92,8 +94,8 @@ const mapDispatchToProps = dispatch => ({
     sumAnswer: () => dispatch({ type: SUM_ANSWER }),
     subtractAnswer: () => dispatch({ type: SUBTRACT_ANSWER }),
     userAnswer: (userAnswer) => dispatch({ type: USER_ANSWER, payload: userAnswer }),
-    clearUserAnswer: () => dispatch({ type: CLEAR_USER_ANSWER })
-
+    clearUserAnswer: () => dispatch({ type: CLEAR_USER_ANSWER }),
+    successPhrase: () => dispatch({ type: SUCCESS_PHRASE })
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(MathContainer)
