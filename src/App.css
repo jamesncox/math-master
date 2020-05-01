@@ -1,11 +1,16 @@
 .App {
   font-family: sans-serif;
   text-align: center;
-  background-color: rgb(0, 153, 255);
+  /* background-color: rgb(0, 153, 255); */
+  background-color: #21D4FD;
+  background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+  
   padding: 30px;
   width: 50%;
   margin: auto;
-  border-radius: .10in;
+  /* border-radius: .10in; */
+  border-bottom-left-radius: .5in;
+  border-top-right-radius: .5in;
 }
 
 button {
@@ -25,7 +30,9 @@ h1{
   color: white;
   padding: 10px;
   margin: auto;
-  border-radius: .10in;
+  /* border-radius: .10in; */
+  border-bottom-left-radius: .5in;
+  border-top-right-radius: .5in;
 }
 
 h2{
@@ -40,6 +47,8 @@ h4{
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.671);
   border: solid black 1px;
   border-radius: .05in;
+  /* border-bottom-left-radius: .4in;
+  border-top-right-radius: .4in; */
   font-size: 30px;
   padding: 10px;
   width: 260px;
@@ -54,7 +63,7 @@ p{
 }
 
 .wrapper{
-  background-color: rgb(0, 153, 255);
+  /* background-color: rgb(0, 153, 255); */
   padding: 30px;
   width: 80%;
   margin: auto;
