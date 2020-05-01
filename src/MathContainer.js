@@ -51,7 +51,7 @@ class MathContainer extends Component {
         return (
             <div className="wrapper">
                 <Score />
-                <button style={{ marginTop: "20px" }} onClick={this.handleClick}>Generate problem</button>
+                <button style={{ marginTop: "20px" }} onClick={this.handleClick}>Generate equation</button>
                 <Solution />
                 <div className="math-box">
                     <FirstNumber />
