@@ -13,7 +13,7 @@ class Solution extends Component {
             } else {
                 this.props.reduceScore()
                 this.props.clearProblem()
-                return <h4 style={{ backgroundColor: "red" }}>Sorry, the answer is {this.props.answer} </h4>
+                return <h4 style={{ backgroundColor: "rgba(255, 0, 0, 0.8)" }}>Sorry, the answer is {this.props.answer} </h4>
             }
         }
     }
