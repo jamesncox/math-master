@@ -13,12 +13,14 @@ export default (state = { phrase: null }, action) => {
                 "Woohoo!",
                 "Congrats!",
                 "Awesome!",
-                "Nice job!",
+                "Great job!",
                 "Way to go!",
                 "You got it!",
                 "Booyah!",
                 "That's right!",
-                "You rock!"
+                "You rock!",
+                "You're a genius!",
+                "Correct!"
             ]
             const genRandomPhrase = phrases[Math.floor(Math.random() * phrases.length)]
             return { ...state, phrase: genRandomPhrase }
