@@ -22,7 +22,9 @@ export default (state = { phrase: null }, action) => {
                 "You're a genius!",
                 "Correct!",
                 "Nice work!",
-                "Hooray!"
+                "Hooray!",
+                "Amazing!",
+                "Marvelous!"
             ]
             const genRandomPhrase = phrases[Math.floor(Math.random() * phrases.length)]
             return { ...state, phrase: genRandomPhrase }
