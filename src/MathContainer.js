@@ -84,7 +84,6 @@ class MathContainer extends Component {
     render() {
         return (
             <div className="wrapper">
-                {/* TO-DO: make different functions based on selected difficulty */}
                 <p className="select-difficulty">select difficulty</p>
                 <select className="select" id="selectedDifficulty">
                     <option value="easy">Easy</option>
