@@ -6,7 +6,8 @@ import {
     SUBTRACT_ANSWER,
     USER_ANSWER,
     CLEAR_USER_ANSWER,
-    CLEAR_PROBLEM
+    CLEAR_PROBLEM,
+    REVERSE_SUBTRACT_ANSWER
 } from '../actionTypes/'
 
 export default (state = {
@@ -40,6 +41,10 @@ export default (state = {
         case SUBTRACT_ANSWER:
             const subtractAnswer = state.firstNumber - state.secondNumber
             return { ...state, answer: subtractAnswer }
+
+        case REVERSE_SUBTRACT_ANSWER:
+            const reverseSubtractAnswer = state.secondNumber - state.firstNumber
+            return { ...state, answer: reverseSubtractAnswer }
 
         case USER_ANSWER:
             return { ...state, userAnswer: action.payload }

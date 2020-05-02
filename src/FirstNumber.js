@@ -4,16 +4,25 @@ import { connect } from 'react-redux'
 class FirstNumber extends Component {
 
     render() {
-        return (
-            <>
-                {this.props.firstNumber}
-            </>
-        )
+        if (this.props.secondNumber > this.props.firstNumber) {
+            return (
+                <>
+                    {this.props.secondNumber}
+                </>
+            )
+        } else {
+            return (
+                <>
+                    {this.props.firstNumber}
+                </>
+            )
+        }
     }
 }
 
 const mapStateToProps = (state) => ({
-    firstNumber: state.math.firstNumber
+    firstNumber: state.math.firstNumber,
+    secondNumber: state.math.secondNumber
 })
 
 export default connect(mapStateToProps)(FirstNumber)
