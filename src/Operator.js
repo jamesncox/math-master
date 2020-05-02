@@ -4,11 +4,15 @@ import { connect } from 'react-redux'
 class Operator extends Component {
 
     render() {
-        return (
-            <>
-                {this.props.operator}
-            </>
-        )
+        if (this.props.operator === "*") {
+            return "x"
+        } else {
+            return (
+                <>
+                    {this.props.operator}
+                </>
+            )
+        }
     }
 }
 
