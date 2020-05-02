@@ -48,6 +48,7 @@ class MathContainer extends Component {
         } else {
             this.props.reverseSubtractAnswer()
         }
+
         this.setState({
             userAnswer: ""
         })
