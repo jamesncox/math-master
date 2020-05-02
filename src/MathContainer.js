@@ -107,8 +107,11 @@ class MathContainer extends Component {
                 <form onSubmit={this.handleSubmit.bind(this)}>
                     <input
                         className="answer-box"
+                        inputMode="numeric"
+                        pattern="[0-9]"
                         type="number"
-                        name="userAnswer" value={this.state.userAnswer}
+                        name="userAnswer"
+                        value={this.state.userAnswer}
                         onChange={e => this.handleChange(e)}
                     />
                     <input
