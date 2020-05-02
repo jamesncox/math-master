@@ -7,7 +7,21 @@ class Solution extends Component {
     revealSolution = () => {
         if (this.props.userAnswer !== "") {
             if (this.props.answer === parseInt(this.props.userAnswer)) {
-                if (this.props.prevSecondNumber > this.props.prevFirstNumber) {
+                if (this.props.prevOperator === "*") {
+                    this.props.increaseScore()
+                    this.props.clearProblem()
+                    return (
+                        <h4>
+                            {this.props.phrase}
+                            <br></br>
+                            {this.props.prevSecondNumber}{' '}
+                            x{' '}
+                            {this.props.prevFirstNumber}{' '}
+                            =
+                            {' '}{this.props.userAnswer}
+                        </h4>
+                    )
+                } else if (this.props.prevSecondNumber > this.props.prevFirstNumber) {
                     this.props.increaseScore()
                     this.props.clearProblem()
                     return (
