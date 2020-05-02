@@ -14,7 +14,13 @@ import {
     SUBTRACT_ANSWER,
     REVERSE_SUBTRACT_ANSWER,
     CLEAR_USER_ANSWER,
-    SUCCESS_PHRASE
+    SUCCESS_PHRASE,
+    MEDIUM_SECOND_NUMBER,
+    HARD_FIRST_NUMBER,
+    MULTIPLY_FIRST_NUMBER,
+    MULTIPLY_SECOND_NUMBER,
+    MULTIPLY_OPERATOR,
+    MULTIPLY_ANSWER
 } from './actionTypes'
 
 class MathContainer extends Component {
@@ -30,9 +36,28 @@ class MathContainer extends Component {
     }
 
     handleClick = () => {
-        this.props.firstNumber()
-        this.props.secondNumber()
-        this.props.operator()
+        const selectedDifficulty = document.getElementById("selectedDifficulty")
+
+        if (selectedDifficulty.value === "easy") {
+            this.props.firstNumber()
+            this.props.secondNumber()
+            this.props.operator()
+        } else if (selectedDifficulty.value === "medium") {
+            this.props.firstNumber()
+            this.props.mediumSecondNumber()
+            this.props.operator()
+        } else if (selectedDifficulty.value === "hard") {
+            this.props.hardFirstNumber()
+            this.props.mediumSecondNumber()
+            this.props.operator()
+        } else if (selectedDifficulty.value === "multiply") {
+            this.props.multiplyFirstNumber()
+            this.props.multiplySecondNumber()
+            this.props.multiplyOperator()
+        } else {
+            return null
+        }
+
         this.props.successPhrase()
         this.props.clearUserAnswer()
     };
@@ -43,6 +68,8 @@ class MathContainer extends Component {
 
         if (this.props.operatorSign === "+") {
             this.props.sumAnswer()
+        } else if (this.props.operatorSign === "*") {
+            this.props.multiplyAnswer()
         } else if (this.props.numberOne > this.props.numberTwo) {
             this.props.subtractAnswer()
         } else {
@@ -58,12 +85,13 @@ class MathContainer extends Component {
         return (
             <div className="wrapper">
                 {/* TO-DO: make different functions based on selected difficulty */}
-                {/* <p className="select-difficulty">select difficulty</p>
+                <p className="select-difficulty">select difficulty</p>
                 <select className="select" id="selectedDifficulty">
-                    <option value="Easy">Easy</option>
-                    <option value="Medium">Medium</option>
-                    <option value="Hard">Hard</option>
-                </select> */}
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                    <option value="multiply">Multiply</option>
+                </select>
                 <Score />
                 <button style={{ marginTop: "20px" }} onClick={this.handleClick}>Generate equation</button>
                 <Solution />
@@ -111,7 +139,13 @@ const mapDispatchToProps = dispatch => ({
     reverseSubtractAnswer: () => dispatch({ type: REVERSE_SUBTRACT_ANSWER }),
     userAnswer: (userAnswer) => dispatch({ type: USER_ANSWER, payload: userAnswer }),
     clearUserAnswer: () => dispatch({ type: CLEAR_USER_ANSWER }),
-    successPhrase: () => dispatch({ type: SUCCESS_PHRASE })
+    successPhrase: () => dispatch({ type: SUCCESS_PHRASE }),
+    mediumSecondNumber: () => dispatch({ type: MEDIUM_SECOND_NUMBER }),
+    hardFirstNumber: () => dispatch({ type: HARD_FIRST_NUMBER }),
+    multiplyFirstNumber: () => dispatch({ type: MULTIPLY_FIRST_NUMBER }),
+    multiplySecondNumber: () => dispatch({ type: MULTIPLY_SECOND_NUMBER }),
+    multiplyOperator: () => dispatch({ type: MULTIPLY_OPERATOR }),
+    multiplyAnswer: () => dispatch({ type: MULTIPLY_ANSWER })
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(MathContainer)
