@@ -61,7 +61,10 @@
     }
 }
 
-@media only screen and (max-width:405px){
+@media only screen and (max-width:415px){
+    .App {
+        width: 80%;
+    }
     .math-box{
         line-height: 40px;
         height: 40px;
@@ -81,5 +84,9 @@
         height: 60px;
         width: 60px;
         padding: 20px;
+    }
+
+    .select-difficulty{
+        font-size: 15px;
     }
 }
