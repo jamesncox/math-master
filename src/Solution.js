@@ -10,16 +10,44 @@ class Solution extends Component {
                 if (this.props.prevSecondNumber > this.props.prevFirstNumber) {
                     this.props.increaseScore()
                     this.props.clearProblem()
-                    return <h4>{this.props.phrase} <br></br> {this.props.prevSecondNumber} {this.props.prevOperator} {this.props.prevFirstNumber} = {this.props.userAnswer}</h4>
+                    return (
+                        <h4>
+                            {this.props.phrase}
+                            <br></br>
+                            {this.props.prevSecondNumber}{' '}
+                            {this.props.prevOperator}{' '}
+                            {this.props.prevFirstNumber}{' '}
+                            =
+                            {' '}{this.props.userAnswer}
+                        </h4>
+                    )
                 } else {
                     this.props.increaseScore()
                     this.props.clearProblem()
-                    return <h4>{this.props.phrase} <br></br> {this.props.prevFirstNumber} {this.props.prevOperator} {this.props.prevSecondNumber} = {this.props.userAnswer}</h4>
+                    return (
+                        <h4>
+                            {this.props.phrase}
+                            <br></br>
+                            {this.props.prevFirstNumber}{' '}
+                            {this.props.prevOperator}{' '}
+                            {this.props.prevSecondNumber}{' '}
+                            =
+                            {' '}{this.props.userAnswer}
+                        </h4>
+                    )
                 }
             } else {
                 this.props.reduceScore()
-                // this.props.clearProblem()
-                return <h4 style={{ backgroundColor: "rgba(255, 0, 0, 0.8)" }}>{this.props.userAnswer} is incorrect, <br></br> try again! </h4>
+                return (
+                    <h4
+                        style={{ backgroundColor: "rgba(255, 0, 0, 0.7)" }}>
+                        {this.props.userAnswer}
+                        {' '}
+                        is incorrect,
+                        <br></br>
+                        try again!
+                    </h4>
+                )
             }
         }
     }
