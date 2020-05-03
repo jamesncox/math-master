@@ -38,6 +38,8 @@ class Solution extends Component {
                         )
                     }
                 } else if (this.props.prevOperator === "/") {
+                    this.props.increaseScore()
+                    this.props.clearProblem()
                     return (
                         <h4>
                             {this.props.phrase}
