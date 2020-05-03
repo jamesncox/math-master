@@ -37,6 +37,18 @@ class Solution extends Component {
                             </h4>
                         )
                     }
+                } else if (this.props.prevOperator === "/") {
+                    return (
+                        <h4>
+                            {this.props.phrase}
+                            <br></br>
+                            {this.props.prevFirstNumber}{' '}
+                            {'\u00F7'}{' '}
+                            {this.props.prevSecondNumber}{' '}
+                            =
+                            {' '}{this.props.userAnswer}
+                        </h4>
+                    )
                 } else if (this.props.prevSecondNumber > this.props.prevFirstNumber) {
                     this.props.increaseScore()
                     this.props.clearProblem()

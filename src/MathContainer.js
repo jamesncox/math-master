@@ -20,7 +20,11 @@ import {
     MULTIPLY_FIRST_NUMBER,
     MULTIPLY_SECOND_NUMBER,
     MULTIPLY_OPERATOR,
-    MULTIPLY_ANSWER
+    MULTIPLY_ANSWER,
+    DIVIDE_FIRST_NUMBER,
+    DIVIDE_SECOND_NUMBER,
+    DIVIDE_OPERATOR,
+    DIVIDE_ANSWER
 } from './actionTypes'
 
 class MathContainer extends Component {
@@ -54,6 +58,10 @@ class MathContainer extends Component {
             this.props.multiplyFirstNumber()
             this.props.multiplySecondNumber()
             this.props.multiplyOperator()
+        } else if (selectedDifficulty.value === "divide") {
+            this.props.divideFirstNumber()
+            this.props.divideSecondNumber()
+            this.props.divideOperator()
         } else {
             return null
         }
@@ -70,6 +78,8 @@ class MathContainer extends Component {
             this.props.sumAnswer()
         } else if (this.props.operatorSign === "*") {
             this.props.multiplyAnswer()
+        } else if (this.props.operatorSign === "/") {
+            this.props.divideAnswer()
         } else if (this.props.numberOne > this.props.numberTwo) {
             this.props.subtractAnswer()
         } else {
@@ -90,6 +100,7 @@ class MathContainer extends Component {
                     <option value="medium">Medium</option>
                     <option value="hard">Hard</option>
                     <option value="multiply">Multiply</option>
+                    <option value="divide">Divide</option>
                 </select>
                 <Score />
                 <button style={{ marginTop: "20px" }} onClick={this.handleClick}>Generate equation</button>
@@ -147,7 +158,11 @@ const mapDispatchToProps = dispatch => ({
     multiplyFirstNumber: () => dispatch({ type: MULTIPLY_FIRST_NUMBER }),
     multiplySecondNumber: () => dispatch({ type: MULTIPLY_SECOND_NUMBER }),
     multiplyOperator: () => dispatch({ type: MULTIPLY_OPERATOR }),
-    multiplyAnswer: () => dispatch({ type: MULTIPLY_ANSWER })
+    multiplyAnswer: () => dispatch({ type: MULTIPLY_ANSWER }),
+    divideFirstNumber: () => dispatch({ type: DIVIDE_FIRST_NUMBER }),
+    divideSecondNumber: () => dispatch({ type: DIVIDE_SECOND_NUMBER }),
+    divideOperator: () => dispatch({ type: DIVIDE_OPERATOR }),
+    divideAnswer: () => dispatch({ type: DIVIDE_ANSWER })
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(MathContainer)

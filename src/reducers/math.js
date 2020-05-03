@@ -13,7 +13,11 @@ import {
     MULTIPLY_FIRST_NUMBER,
     MULTIPLY_SECOND_NUMBER,
     MULTIPLY_OPERATOR,
-    MULTIPLY_ANSWER
+    MULTIPLY_ANSWER,
+    DIVIDE_FIRST_NUMBER,
+    DIVIDE_SECOND_NUMBER,
+    DIVIDE_OPERATOR,
+    DIVIDE_ANSWER
 } from '../actionTypes/'
 
 export default (state = {
@@ -60,6 +64,10 @@ export default (state = {
             const multiplyOperator = "*"
             return { ...state, operator: multiplyOperator, prevOperator: multiplyOperator }
 
+        case MULTIPLY_ANSWER:
+            const multiplyAnswer = state.firstNumber * state.secondNumber
+            return { ...state, answer: multiplyAnswer }
+
         case SUM_ANSWER:
             const sumAnswer = state.firstNumber + state.secondNumber
             return { ...state, answer: sumAnswer }
@@ -72,9 +80,23 @@ export default (state = {
             const reverseSubtractAnswer = state.secondNumber - state.firstNumber
             return { ...state, answer: reverseSubtractAnswer }
 
-        case MULTIPLY_ANSWER:
-            const multiplyAnswer = state.firstNumber * state.secondNumber
-            return { ...state, answer: multiplyAnswer }
+        case DIVIDE_FIRST_NUMBER:
+            const divideFirstNumberArray = [10, 20, 30, 40, 50, 60, 70, 80, 90]
+            const genDivideFirstNumber = divideFirstNumberArray[Math.floor(Math.random() * divideFirstNumberArray.length)]
+            return { ...state, firstNumber: genDivideFirstNumber, prevFirstNumber: genDivideFirstNumber }
+
+        case DIVIDE_SECOND_NUMBER:
+            const divideSecondNumberArray = [1, 2, 5, 10]
+            const genDivideSecondNumber = divideSecondNumberArray[Math.floor(Math.random() * divideSecondNumberArray.length)]
+            return { ...state, secondNumber: genDivideSecondNumber, prevSecondNumber: genDivideSecondNumber }
+
+        case DIVIDE_OPERATOR:
+            const divideOperator = "/"
+            return { ...state, operator: divideOperator, prevOperator: divideOperator }
+
+        case DIVIDE_ANSWER:
+            const divideAnswer = state.firstNumber / state.secondNumber
+            return { ...state, answer: divideAnswer }
 
         case USER_ANSWER:
             return { ...state, userAnswer: action.payload }
