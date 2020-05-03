@@ -116,6 +116,7 @@ class MathContainer extends Component {
                 </div>
                 <h2>=</h2>
                 <form onSubmit={this.handleSubmit.bind(this)}>
+                    // write a blog post about getting the numeric box to pop on iOS
                     <input
                         className="answer-box"
                         inputMode="numeric"

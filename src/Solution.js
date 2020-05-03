@@ -45,6 +45,7 @@ class Solution extends Component {
                             {this.props.phrase}
                             <br></br>
                             {this.props.prevFirstNumber}{' '}
+                            {/* write a blog post about using Unicode in React/JSX */}
                             {'\u00F7'}{' '}
                             {this.props.prevSecondNumber}{' '}
                             =

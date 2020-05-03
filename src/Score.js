@@ -6,7 +6,7 @@ class Score extends Component {
     render() {
         return (
             <div className="score-box">
-                <p>Points</p>
+                <p>Score</p>
                 {this.props.score}
             </div>
         )
