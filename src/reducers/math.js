@@ -53,11 +53,11 @@ export default (state = {
             return { ...state, operator: genOperator, prevOperator: genOperator }
 
         case MULTIPLY_FIRST_NUMBER:
-            const genMultiplyFirstNumber = Math.floor(Math.random() * 12) + 1
+            const genMultiplyFirstNumber = Math.floor(Math.random() * 15) + 1
             return { ...state, firstNumber: genMultiplyFirstNumber, prevFirstNumber: genMultiplyFirstNumber }
 
         case MULTIPLY_SECOND_NUMBER:
-            const genMultiplySecondNumber = Math.floor(Math.random() * 12) + 1
+            const genMultiplySecondNumber = Math.floor(Math.random() * 15) + 1
             return { ...state, secondNumber: genMultiplySecondNumber, prevSecondNumber: genMultiplySecondNumber }
 
         case MULTIPLY_OPERATOR:
@@ -81,7 +81,7 @@ export default (state = {
             return { ...state, answer: reverseSubtractAnswer }
 
         case DIVIDE_FIRST_NUMBER:
-            const divideFirstNumberArray = [10, 20, 30, 40, 50, 60, 70, 80, 90]
+            const divideFirstNumberArray = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200]
             const genDivideFirstNumber = divideFirstNumberArray[Math.floor(Math.random() * divideFirstNumberArray.length)]
             return { ...state, firstNumber: genDivideFirstNumber, prevFirstNumber: genDivideFirstNumber }
 

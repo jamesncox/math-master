@@ -94,7 +94,7 @@ class MathContainer extends Component {
     render() {
         return (
             <div className="wrapper">
-                <p className="select-difficulty">select difficulty</p>
+                <p className="select-difficulty">select level</p>
                 <select className="select" id="selectedDifficulty">
                     <option value="easy">Easy</option>
                     <option value="medium">Medium</option>
