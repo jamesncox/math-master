@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { DIVIDE_ANSWER } from './actionTypes'
 
 class Operator extends Component {
 
