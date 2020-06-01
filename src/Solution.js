@@ -5,12 +5,12 @@ import { INCREASE_SCORE, REDUCE_SCORE, CLEAR_PROBLEM } from './actionTypes'
 class Solution extends Component {
 
     revealSolution = () => {
-        if (this.props.userAnswer !== "") {
+        if (this.props.userAnswer) {
             if (this.props.answer === parseInt(this.props.userAnswer)) {
+                this.props.increaseScore()
+                this.props.clearProblem()
                 if (this.props.prevOperator === "*") {
                     if (this.props.prevSecondNumber > this.props.prevFirstNumber) {
-                        this.props.increaseScore()
-                        this.props.clearProblem()
                         return (
                             <h4>
                                 {this.props.phrase}
@@ -23,8 +23,6 @@ class Solution extends Component {
                             </h4>
                         )
                     } else {
-                        this.props.increaseScore()
-                        this.props.clearProblem()
                         return (
                             <h4>
                                 {this.props.phrase}
@@ -38,8 +36,6 @@ class Solution extends Component {
                         )
                     }
                 } else if (this.props.prevOperator === "/") {
-                    this.props.increaseScore()
-                    this.props.clearProblem()
                     return (
                         <h4>
                             {this.props.phrase}
@@ -53,8 +49,6 @@ class Solution extends Component {
                         </h4>
                     )
                 } else if (this.props.prevSecondNumber > this.props.prevFirstNumber) {
-                    this.props.increaseScore()
-                    this.props.clearProblem()
                     return (
                         <h4>
                             {this.props.phrase}
@@ -67,8 +61,6 @@ class Solution extends Component {
                         </h4>
                     )
                 } else {
-                    this.props.increaseScore()
-                    this.props.clearProblem()
                     return (
                         <h4>
                             {this.props.phrase}

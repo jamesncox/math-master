@@ -1,5 +1,7 @@
 # TODO
 
+[] Debug points issue
+
 [] Add small animation for fist 10 points
 
 [] Add animation for every 50 points achieved
