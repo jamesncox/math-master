@@ -13,7 +13,7 @@
 
 # BLOG IDEAS
 
-[] How to get a unicode symbol into JSX
+[x] How to get a unicode symbol into JSX
 
 [] How to make my select field stop zooming on iOS (viewport in index.html)
 
