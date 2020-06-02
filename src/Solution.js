@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { INCREASE_SCORE, REDUCE_SCORE, CLEAR_PROBLEM } from './actionTypes'
+import { INCREASE_SCORE, REDUCE_SCORE, CLEAR_PROBLEM, CLEAR_USER_ANSWER } from './actionTypes'
 
 class Solution extends Component {
 
@@ -111,7 +111,8 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
     increaseScore: () => dispatch({ type: INCREASE_SCORE }),
     reduceScore: () => dispatch({ type: REDUCE_SCORE }),
-    clearProblem: () => dispatch({ type: CLEAR_PROBLEM })
+    clearProblem: () => dispatch({ type: CLEAR_PROBLEM }),
+    clearUserAnswer: () => dispatch({ type: CLEAR_USER_ANSWER })
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Solution)
