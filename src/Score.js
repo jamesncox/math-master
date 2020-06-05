@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { merge, fadeInDown, bounceIn } from 'react-animations'
+import { merge, zoomOut, flash } from 'react-animations'
 import styled, { keyframes } from 'styled-components';
 
-const fadeBounce = merge(bounceIn, fadeInDown)
-const bounceAnimation = keyframes`${bounceIn}`;
+const fadeBounce = merge(flash, zoomOut)
+const bounceAnimation = keyframes`${fadeBounce}`;
 const BouncyDiv = styled.div`
-  animation: 2s ${bounceAnimation};
+  animation: 1.5s ${bounceAnimation};
 `;
 
 class Score extends Component {
