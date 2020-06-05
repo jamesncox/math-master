@@ -6,7 +6,7 @@ import styled, { keyframes } from 'styled-components';
 const fadeBounce = merge(bounceIn, fadeInDown)
 const bounceAnimation = keyframes`${bounceIn}`;
 const BouncyDiv = styled.div`
-  animation: 1s ${bounceAnimation};
+  animation: 2s ${bounceAnimation};
 `;
 
 class Score extends Component {
