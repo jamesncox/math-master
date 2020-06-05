@@ -1,5 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { bounceIn } from 'react-animations'
+import styled, { keyframes } from 'styled-components';
+
+const bounceAnimation = keyframes`${bounceIn}`;
+
+const BouncyDiv = styled.div`
+  animation: 2s ${bounceAnimation};
+`;
 
 class Score extends Component {
 
@@ -7,7 +15,7 @@ class Score extends Component {
         return (
             <div className="score-box">
                 <p>Score</p>
-                {this.props.score}
+                <BouncyDiv key={this.props.score}>{this.props.score}</BouncyDiv>
             </div>
         )
     }
