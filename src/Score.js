@@ -6,7 +6,7 @@ import styled, { keyframes } from 'styled-components';
 const fadeBounce = merge(flash, zoomOut)
 const bounceAnimation = keyframes`${fadeBounce}`;
 const BouncyDiv = styled.div`
-  animation: 1.5s ${bounceAnimation};
+  animation: 1s 2 ${bounceAnimation};
 `;
 
 class Score extends Component {
