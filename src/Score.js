@@ -4,7 +4,7 @@ import { merge, fadeInDown, bounceIn } from 'react-animations'
 import styled, { keyframes } from 'styled-components';
 
 const fadeBounce = merge(bounceIn, fadeInDown)
-const bounceAnimation = keyframes`${fadeBounce}`;
+const bounceAnimation = keyframes`${bounceIn}`;
 const BouncyDiv = styled.div`
   animation: 1s ${bounceAnimation};
 `;
