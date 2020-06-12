@@ -72,23 +72,28 @@ class MathContainer extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        this.props.userAnswer(this.state.userAnswer)
 
-        if (this.props.operatorSign === "+") {
-            this.props.sumAnswer()
-        } else if (this.props.operatorSign === "*") {
-            this.props.multiplyAnswer()
-        } else if (this.props.operatorSign === "/") {
-            this.props.divideAnswer()
-        } else if (this.props.numberOne > this.props.numberTwo) {
-            this.props.subtractAnswer()
+        if (this.props.operatorSign === null) {
+            e.preventDefault()
         } else {
-            this.props.reverseSubtractAnswer()
-        }
+            this.props.userAnswer(this.state.userAnswer)
 
-        this.setState({
-            userAnswer: ""
-        })
+            if (this.props.operatorSign === "+") {
+                this.props.sumAnswer()
+            } else if (this.props.operatorSign === "*") {
+                this.props.multiplyAnswer()
+            } else if (this.props.operatorSign === "/") {
+                this.props.divideAnswer()
+            } else if (this.props.numberOne > this.props.numberTwo) {
+                this.props.subtractAnswer()
+            } else {
+                this.props.reverseSubtractAnswer()
+            }
+
+            this.setState({
+                userAnswer: ""
+            })
+        }
     }
 
     render() {
