@@ -11,6 +11,14 @@ const BouncyDiv = styled.div`
 
 class Score extends Component {
 
+    state = {
+        mounted: false
+    }
+
+    componentDidMount = () => {
+        this.setState({ mounted: true })
+    }
+
     render() {
         return (
             <div className="score-box">
