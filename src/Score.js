@@ -11,21 +11,22 @@ const BouncyDiv = styled.div`
 
 class Score extends Component {
 
-    state = {
-        mounted: false
-    }
-
-    componentDidMount = () => {
-        this.setState({ mounted: true })
-    }
-
     render() {
-        return (
-            <div className="score-box">
-                <p>Score</p>
-                <BouncyDiv key={this.props.score}>{this.props.score}</BouncyDiv>
-            </div>
-        )
+        if (this.props.score === 0) {
+            return (
+                <div className="score-box">
+                    <p>Score</p>
+                    {this.props.score}
+                </div>
+            )
+        } else {
+            return (
+                <div className="score-box">
+                    <p>Score</p>
+                    <BouncyDiv key={this.props.score}>{this.props.score}</BouncyDiv>
+                </div>
+            )
+        }
     }
 
 }
