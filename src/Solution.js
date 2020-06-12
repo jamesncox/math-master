@@ -4,9 +4,9 @@ import { INCREASE_SCORE, REDUCE_SCORE, CLEAR_PROBLEM, CLEAR_USER_ANSWER } from '
 import { rubberBand } from 'react-animations'
 import styled, { keyframes } from 'styled-components';
 
-const bounceAnimation = keyframes`${rubberBand}`;
+const rubberBandAn = keyframes`${rubberBand}`
 const BouncyDiv = styled.div`
-  animation: 2s ${bounceAnimation};
+  animation: 2s ${rubberBandAn};
 `;
 
 class Solution extends Component {
@@ -27,7 +27,6 @@ class Solution extends Component {
                         return (
                             <h4>
                                 {this.renderPhrase()}
-                                {/* <br></br> */}
                                 {this.props.prevSecondNumber}{' '}
                                 x{' '}
                                 {this.props.prevFirstNumber}{' '}
@@ -39,7 +38,6 @@ class Solution extends Component {
                         return (
                             <h4>
                                 {this.renderPhrase()}
-                                {/* <br></br> */}
                                 {this.props.prevFirstNumber}{' '}
                                 x{' '}
                                 {this.props.prevSecondNumber}{' '}
@@ -52,7 +50,6 @@ class Solution extends Component {
                     return (
                         <h4>
                             {this.renderPhrase()}
-                            {/* <br></br> */}
                             {this.props.prevFirstNumber}{' '}
                             {'\u00F7'}{' '}
                             {this.props.prevSecondNumber}{' '}
@@ -64,7 +61,6 @@ class Solution extends Component {
                     return (
                         <h4>
                             {this.renderPhrase()}
-                            {/* <br></br> */}
                             {this.props.prevSecondNumber}{' '}
                             {this.props.prevOperator}{' '}
                             {this.props.prevFirstNumber}{' '}
@@ -76,7 +72,6 @@ class Solution extends Component {
                     return (
                         <h4>
                             {this.renderPhrase()}
-                            {/* <br></br> */}
                             {this.props.prevFirstNumber}{' '}
                             {this.props.prevOperator}{' '}
                             {this.props.prevSecondNumber}{' '}
@@ -89,13 +84,11 @@ class Solution extends Component {
                 this.props.reduceScore()
                 return (
                     <h4 style={{ backgroundColor: "rgba(255, 0, 0, 0.7)" }}>
-                        <BouncyDiv>
-                            {this.props.userAnswer}
-                            {' '}
+                        {this.props.userAnswer}
+                        {' '}
                         is incorrect,
                         <br></br>
                         try again!
-                    </BouncyDiv>
                     </h4>
                 )
             }
