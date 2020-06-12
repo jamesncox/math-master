@@ -1,12 +1,17 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { INCREASE_SCORE, REDUCE_SCORE, CLEAR_PROBLEM, CLEAR_USER_ANSWER } from './actionTypes'
-import { rubberBand } from 'react-animations'
+import { rubberBand, shake } from 'react-animations'
 import styled, { keyframes } from 'styled-components';
 
 const rubberBandAn = keyframes`${rubberBand}`
 const BouncyDiv = styled.div`
   animation: 2s ${rubberBandAn};
+`;
+
+const shakeAn = keyframes`${shake}`
+const ShakeyDiv = styled.div`
+    animation: .6s ${shakeAn};
 `;
 
 class Solution extends Component {
@@ -84,11 +89,13 @@ class Solution extends Component {
                 this.props.reduceScore()
                 return (
                     <h4 style={{ backgroundColor: "rgba(255, 0, 0, 0.7)" }}>
-                        {this.props.userAnswer}
-                        {' '}
-                        is incorrect,
-                        <br></br>
-                        try again!
+                        <ShakeyDiv key={this.props.userAnswer}>
+                            {this.props.userAnswer}
+                            {' '}
+                            is incorrect,
+                            <br></br>
+                            try again!
+                        </ShakeyDiv>
                     </h4>
                 )
             }
